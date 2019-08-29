@@ -11,14 +11,16 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: mudl_us_development
+  password: ENV["DEV_DB_PASSWORD"]
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: mudl_us_test
+  password: ENV["TEST_DB_PASSWORD"]
 
 production:
   <<: *default
